@@ -18,6 +18,9 @@ def create_app():
 
     from . import readings
     app.register_blueprint(readings.bp)
+
+    from . import config
+    app.register_blueprint(config.bp)
     
     @app.route('/reading/<source>', methods=['POST'])
     def new_reading(source):
